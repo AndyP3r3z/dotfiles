@@ -1,0 +1,36 @@
+# Keybindings
+unbind ^C main
+
+bind ^Q exit main
+bind ^C copy main
+bind ^X cut main
+bind ^V paste main
+bind ^W savefile main
+bind ^S writeout main
+bind ^/ comment main
+bind ^F whereis main
+bind ^N findnext main
+bind ^P findprevious main
+bind ^R replace main
+bind ^H help main
+bind ^G gotoline main
+bind ^E execute main
+bind ^Z undo main
+bind ^Y redo main
+
+# Editor
+set linenumbers
+set nohelp
+set smarthome
+set tabsize 4
+set whitespace "→⋅"
+set autoindent
+
+# Colors
+set numbercolor white,black
+set statuscolor black,green
+set titlecolor black,green
+
+# Sintax highlighting
+
+include /home/andyp3r3z/.config/nano/python.nanorc

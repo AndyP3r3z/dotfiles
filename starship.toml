@@ -1,0 +1,99 @@
+format = """
+[ Ψ ](bg:black fg:#FFFFFF)[](fg:black bg:green)\
+$custom$directory[](fg:green bg:yellow)\
+$c$haskell$python$dart[](fg:yellow bg:blue)\
+$git_branch$git_commit$git_metrics$git_status[](fg:blue bg:purple)\
+$cmd_duration[ ](fg:purple bg:black)
+"""
+add_newline = true
+# Directory icon
+[custom.home]
+when = """[[ "$HOME" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.desktop]
+when = """[[ "$HOME/Desktop" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.documents]
+when = """[[ "$HOME/Documents" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.downloads]
+when = """[[ "$HOME/Downloads" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.music]
+when = """[[ "$HOME/Music" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.pictures]
+when = """[[ "$HOME/Pictures" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.videos]
+when = """[[ "$HOME/Videos" == "$PWD" ]]"""
+symbol = ""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.android]
+when = """[[ "$HOME/Android" == "$PWD" ]]"""
+symbol = "ﲎ"
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+[custom.alldir]
+symbol = ""
+when = """if [[ "$PWD" == "$HOME" || "$PWD" == "$HOME/Desktop" || "$PWD" == "$HOME/Documents" || "$PWD" == "$HOME/Downloads" || "$PWD" == "$HOME/Music" || "$PWD" == "$HOME/Pictures" || "$PWD" == "$HOME/Videos" || "$PWD" == "$HOME/Android" ]]; then
+exit 1; fi"""
+style = "bg:green fg:black"
+format = "[ $symbol]($style)"
+# Path
+[directory]
+style = "bg:green fg:black"			# Color
+format = "[ $path ]($style)"		# Formato
+truncation_length = 3				# Sólo los últimos 3 directorios
+truncation_symbol = "../"			# Símbolo de overflow
+
+# Git
+[git_branch]
+symbol = " "
+style = "fg:black bg:blue"
+format = "[ $symbol $branch ]($style)"
+[git_status]
+style = "fg:black bg:blue"
+format = "[$all_status$ahead_behind ]($style)"
+
+# Command duration
+[cmd_duration]
+style = "fg:black bg:purple"
+format = "[  $duration ]($style)"
+
+# Programming Languages
+[c]
+symbol = ""
+style = "fg:black bg:yellow"
+format = "[ $symbol ($name $version) ]($style)"
+
+[python]
+symbol = ""
+style = "fg:black bg:yellow"
+version_format = "v$major.$minor"
+pyenv_prefix = " env"
+format = "[ $symbol $version$pyenv_prefix $virtualenv ]($style)"
+
+[haskell]
+symbol = ""
+style = "fg:black bg:yellow"
+format = "[$symbol $version ]($style)"
+
+[dart]
+symbol = "🎯"
+style = "fg:black bg:yellow"
+version_format = "v$major.$minor"
+format = "[ $symbol $version ]($style)"

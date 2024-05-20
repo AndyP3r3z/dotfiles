@@ -1,0 +1,53 @@
+## Syntax highlighting for Python.
+
+syntax python "\.py$"
+header "^#!.*python"
+magic "Python script"
+comment "#"
+
+linter pyflakes
+
+# Function and classes definitions.
+color yellow "([^0-9.])([A-Za-z_])+\([^\)]*\)(\.[^\)]*\))?"
+color normal "\([^\)]*\)(\.[^\)]*\))?"
+
+# Keywords.
+color red "\<(import|from)\>"
+color red "\<(and|or|not|in|is|as)\>"
+color red "\<(if|elif|else|match|case)\>"
+color red "\<(try|except|finally)>"
+color red "\<(for|while|with)\>"
+color red "\<(break|continue|return|pass)\>"
+color red "\<(def|class)\>"
+color red "\<(global|lambda|nonlocal|raise|yield|assert|async|await|del)\>"
+color yellow "(int|float|complex|str|bool|list|tuple|dict|set)"
+
+# Symbols
+color yellow "[\+\-\*\/=,<>%!=&\|\^~\:]"
+
+# print() and exec().
+color green "(exec|print)"
+
+# Special values.
+color magenta "\<(False|None|True)\>"
+
+# Mono-quoted strings.
+color cyan "'([^'\]|\\.)*'|"([^"\]|\\.)*"|'''|""""
+color normal "'''|""""
+
+# Comments.
+color blue "(^|[[:blank:]])#.*"
+
+# Triple-quoted strings.
+color cyan start="'''([^'),]|$)" end="(^|[^(\])'''"
+color cyan start=""""([^"),]|$)" end="(^|[^(\])""""
+
+# Backslash escapes.
+color brightcyan "\\($|[\'"abfnrtv]|[0-3]?[0-7]?[0-7]|x[[:xdigit:]]{2})"
+color brightcyan "\\(N\{[[:alpha:]]+\}|u[[:xdigit:]]{4}|U[[:xdigit:]]{8})"
+
+# Reminders.
+color brightwhite "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+color ,black "[[:space:]]+$"
