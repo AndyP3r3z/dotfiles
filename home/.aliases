@@ -1,0 +1,100 @@
+#! /usr/bin/sh
+# cmdline utilities
+alias cls="clear"
+alias trash="gio trash"
+alias rm="trash"
+function tremp {
+	n=$(\ls -A ~/.local/share/Trash/info/ | wc -l)
+	if [[ "$0" != "bash" ]]; then
+		setopt localoptions rmstarsilent
+		read -k "confirmation?Sure you want to delete $n file(s) permanently [yN]? "
+	else
+		read -n 1 -p "Sure you want to delete $n files permanently [yN]? " confirmation
+	fi
+	echo -e "\n"
+	if [[ $confirmation -eq "y" || $confirmation -eq "Y" ]]; then
+		\rm -rf ~/.local/share/Trash/files/
+		\rm -rf ~/.local/share/Trash/info/
+		mkdir ~/.local/share/Trash/info/ ~/.local/share/Trash/files/
+	else
+		echo "Operation aborted."
+	fi
+}
+alias termp="tremp"
+alias cd..="cd .."
+alias merge="paste"
+alias grep="grep --color=auto"
+alias open="xdg-open"
+function detach {
+	# Abre un programa y lo separa de la terminal
+	$@ < /dev/null &> /dev/null &
+}
+function cs {
+	# Declarar variables.
+	lsargs=""
+	directory=""
+	for i in $@; do
+		case $i in
+		# Falgs.
+			-*)
+				# Verificar que no sea un sólo dash (`-`).
+				if [ ! -z "${i:1}" ]; then
+					lsargs="$lsargs $i"
+				fi
+				;;
+		# Directorio.
+			*) directory="$i";;
+		esac
+	done
+	# Arreglar los argumentos del ls.
+	lsargs="${lsargs:1}"
+	# Cambiar directorio, limpiar pantalla y listar.
+	cd $directory && cls && lsd $lsargs
+}
+alias cs..="cs .."
+function bindir {
+	dirname $(which $1)
+}
+alias dirbin="bindir"
+function cstobin {
+	cs $(bindir $1);
+}
+alias csbin="cstobin"
+alias sch="search"
+alias ia="search --chat"
+alias ai="ia"
+alias google="search --google"
+alias youtube="search --youtube"
+
+
+# Default programs substitution
+alias mic="micro"
+alias nano="micro"
+alias cl="cs -l"
+alias ca="cs -A"
+alias cla="cs -lA"
+alias ct="cs --tree"
+alias cta="cs -A --tree"
+alias cat="bat"
+alias ls="cls && lsd"
+alias ll="ls -l"
+alias la="ls -A"
+alias lla="ls -lA"
+alias lt="ls --tree"
+alias lta="ls -A --tree"
+
+# Python
+alias python="cls && python3"
+alias py="python"
+
+# Only in kitty terminal (image cat)
+alias icat='kitty +kitten icat'
+
+# Useless stuff
+alias fastfetch="cls && fastfetch"
+alias neofetch="fastfetch"
+# alias toilet="toilet-deej.toilet"
+# alias xd="toilet-deej.toilet xD"
+#alias pipes="pipes.sh -c 1 -c 2 -c 3 -c 4 -c 5 -c 6 -c 7"
+#alias matrix="cmatrix -s"
+#alias tron="ssh sshtron.zachlatta.com"

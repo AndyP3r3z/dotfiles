@@ -1,0 +1,168 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+HISTFILESIZE=2000
+SAVEHIST=2000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename "$HOME/.zshrc"
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+#------------------------------------------------MY EDITS---------------------------------------------------
+# Path para personales, python y julia
+export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.juliaup/bin:$PATH
+# Editor de terminal por defecto
+export VISUAL=micro
+export EDITOR="$VISUAL"
+export "MICRO_TRUECOLOR=1"
+
+# Añadir mis aliases.
+if [ -f ~/.aliases ]; then
+    . ~/.aliases
+fi
+
+# NEOFETCH
+if [ "$EUID" -ne 0 ]
+then fastfetch && echo "" && lsd
+fi
+# SCREENSAVER
+# TMOUT=300
+# TRAPALRM() {
+	# SCRSVR=$(shuf -i 0-1 -n 1)
+	# if [[ $SCRSVR -eq 0 ]]; then
+		# pipes
+		# return 0
+	# else
+		# matrix
+		# return 0
+	# fi
+# }
+
+
+# ADD PYTHON PACKAGES TO PATH.
+export PYTHONPATH="${PYTHONPATH}:$HOME/.local/bin"
+
+# SHIFT+ARROW SELECTION
+bindkey -e
+
+function zle-line-init {
+    marking=0
+}
+zle -N zle-line-init
+
+function select-char-right {
+    if (( $marking != 1 )) 
+    then
+        marking=1
+        zle set-mark-command
+    fi
+    zle .forward-char
+}
+zle -N select-char-right
+
+function select-char-left {
+    if (( $marking != 1 )) 
+    then
+        marking=1
+        zle set-mark-command
+    fi
+    zle .backward-char
+}
+zle -N select-char-left
+
+function forward-char {
+    if (( $marking == 1 ))
+    then
+        marking=0
+        NUMERIC=-1 zle set-mark-command
+    fi
+    zle .forward-char
+}
+zle -N forward-char
+
+function backward-char {
+    if (( $marking == 1 ))
+    then
+        marking=0
+        NUMERIC=-1 zle set-mark-command
+    fi
+    zle .backward-char
+}
+zle -N backward-char
+
+function delete-char {
+    if (( $marking == 1 ))
+    then
+        zle kill-region
+        marking=0
+    else
+        zle .delete-char
+    fi
+}
+zle -N delete-char
+
+bindkey '^[[1;2D' select-char-left
+bindkey '^[[1;2C' select-char-right
+
+# AUTO CLOSE PARENTHESIS:
+source ~/.config/zsh/zsh-autopair/autopair.zsh
+autopair-init
+
+# SYNTAX HIGHLIGHTING:
+source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	# Añadimos el archivo.
+#ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)			# Le decimos que funcionen estas cosas.
+																	# Lo que sigue aquí es para cambiar los colores.
+typeset -A ZSH_HIGHLIGHT_STYLES										# Sobre-escribimos la variable.
+# Ejemplo: ZSH_HIGHLIGHT_STYLES[alias]='fg=green,bold'				# Lo que está después del 'fg=' es el nuevo estilo,
+																	# mientras que lo que está entre [] es lo que cambiará.
+																	# Para una lista completa de lo que se puede cambiar:
+																	# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
+
+																	# ------- Palabras reservadas ------
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue,bold'						# Los comandos integrados de la shell.
+ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold'						# El resto de comandos (instalables y desinstalables).
+ZSH_HIGHLIGHT_STYLES[precommand]='fg=magenta,bold'					# Modificadores, como "sudo"
+ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'							# Los aliases.
+ZSH_HIGHLIGHT_STYLES[function]='fg=cyan,bold'						# Nombre de funciones.
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta,bold'				# Otras palabras reservadas, como "while".
+																	# ------ Opciones de Comandos ------
+ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'				# Opciones directas, como "-la"
+ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'				# Opciones indirectas, como "--remove"
+																	# ----------- Quotations -----------
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green,bold'		# Comillas simples.
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=green'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green,bold'		# Comillas dobles.
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=green'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=cyan,bold'			# Quotes con dólar.
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=#079c83'		# Para los backslashes.
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=#079c83'
+																	#-------------- Otros --------------
+ZSH_HIGHLIGHT_STYLES[path]='fg=blue,underline'						# Ubicaciones existentes del sistema.
+ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=yellow'				# Números.
+ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=yellow'						# Otros números más raros.
+ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta,bold'						# Asignación de variables.
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#5C6370'							# Comentarios.
+setopt interactivecomments
+
+# AUTOSUGGESTIONS
+source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
+
+# PROMPT
+eval "$(starship init zsh)"
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=("$HOME/.juliaup/bin" $path)
+export PATH
+
+# <<< juliaup initialize <<<
