@@ -25,7 +25,7 @@
 		"battery",
 		"custom/wlogout",
 	],
-	
+
 	"hyprland/window": {
 		"icon": true,
 		// "max-length": 35,
