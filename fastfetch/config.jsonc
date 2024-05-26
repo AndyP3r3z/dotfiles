@@ -1,0 +1,42 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"modules": [
+		"break", "break",
+		"title",
+		{"type": "separator", "string": "="},
+		"break",
+		{"type": "host", "key": "  󰇅"},
+		{"type": "cpu", "key": "  "},
+		"gpu",
+		{"type": "display", "key": "  "},
+		{"type": "kernel", "key": "  "},
+		{"type": "os", "key": " OS"},
+		{"type": "packages", "key": "  󰏖"},
+		{"type": "uptime", "key": "  󰞌"},
+		{"type": "memory", "key": "  "},
+		{"type": "disk", "key": "  "},
+		{"type": "battery", "key": "  󰁹"},
+		{"type": "localip", "key": " IP"},
+		"break",
+		{
+			"type":"custom",
+			"format": "\u001b[30m\u001b[90m \u001b[31m\u001b[91m \u001b[32m\u001b[92m \u001b[33m\u001b[93m \u001b[34m\u001b[94m \u001b[35m\u001b[95m \u001b[36m\u001b[96m \u001b[37m\u001b[97m"
+		},
+	],
+
+	"logo": {
+		"padding": {
+			"top": 4,
+			"left": 1,
+		},
+		"color": {"1": "green"}
+	},
+	"display": {
+		"separator": "  ~> ",
+		"color": {
+			"keys": "green",
+			"title": "yellow",
+		},
+		
+	}
+}
