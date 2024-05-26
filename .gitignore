@@ -1,6 +1,7 @@
 xournalpp/autosave/*
 xournalpp/metadata/*
 micro/buffers/*
+micro/backups/
 zsh/zsh-autopair/
 zsh/zsh-autosuggestions/
 zsh/zsh-syntax-highlighting/
