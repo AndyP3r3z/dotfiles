@@ -11,7 +11,7 @@
 		{"type": "display", "key": "  "},
 		{"type": "kernel", "key": "  "},
 		{"type": "os", "key": " OS"},
-		{"type": "packages", "key": "  󰏖"},
+		{"type": "packages", "key": "  "},
 		{"type": "uptime", "key": "  󰞌"},
 		{"type": "memory", "key": "  "},
 		{"type": "disk", "key": "  "},
