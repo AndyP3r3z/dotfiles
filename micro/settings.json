@@ -4,7 +4,7 @@
     },
     "colorscheme": "everforest",
     "ftoptions": false,
-    "indentchar": "󰁔",
+    "indentchar": "│",
     "lsp.formatOnSave": false,
     "lsp.ignoreMessages": "W191 indentation contains tabs",
     "lsp.server": "python=pylsp",
