@@ -1,5 +1,5 @@
 format = """
-[ Ψ ](bg:black fg:#FFFFFF)[](fg:black bg:green)\
+[ Ψ ](bg:black fg:white)[](fg:black bg:green)\
 $custom$directory[](fg:green bg:yellow)\
 $c$haskell$python$dart[](fg:yellow bg:blue)\
 $git_branch$git_commit$git_metrics$git_status[](fg:blue bg:purple)\
