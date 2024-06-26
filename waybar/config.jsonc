@@ -44,7 +44,7 @@
 		},
 		"window-rewrite-default": "󰘔",
 		"window-rewrite": {
-			"title<.*WhatsApp>": "",
+			"title<WhatsApp Web>": "",
 			"class<firefox>": "󰈹",
 			"class<steam>": "󰓓",
 			"class<kitty>": "",
