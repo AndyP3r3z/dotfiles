@@ -1,5 +1,11 @@
 ignore-empty-password
 
+# Clock config
+
+clock
+timestr=%H:%m
+datestr=%a, %d/%b
+
 # Indicator configs
 
 indicator-idle-visible
