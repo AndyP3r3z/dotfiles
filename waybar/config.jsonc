@@ -80,14 +80,14 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-full": "{icon} {capacity}%",
-		"format-charging": " {icon} {capacity}%",
-		"format-plugged": " {icon} {capacity}%",
+		"format": "{icon}  {capacity}%",
+		"format-full": "{icon}  {capacity}%",
+		"format-charging": "{icon} {capacity}%",
+		"format-plugged": "{icon} {capacity}%",
 		// "format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
 		// "format-full": "",
-		"format-icons": ["  ", "  ", "  ", "  ", "  "]
+		"format-icons": [" ", " ", " ", " ", " "]
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
