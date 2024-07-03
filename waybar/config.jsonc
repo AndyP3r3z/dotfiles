@@ -82,7 +82,7 @@
 		},
 		"format": "{icon} {capacity}%",
 		"format-full": "{icon} {capacity}%",
-		"format-charging": " {icon} {capacity}%",
+		"format-charging": " {icon} {capacity}%",
 		"format-plugged": " {icon} {capacity}%",
 		// "format-alt": "{time} {icon}",
 		// "format-good": "", // An empty format will hide the module
