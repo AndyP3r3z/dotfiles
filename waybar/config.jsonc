@@ -38,7 +38,7 @@
 		"show-special": true,
 		"format-icons": {
 			"default": "",
-			"active": "",
+			"active": "<span size='larger'></span>",
 			"urgent": "",
 			"special": "",
 		},
@@ -46,6 +46,8 @@
 		"window-rewrite": {
 			"title<WhatsApp Web>": "",
 			"class<firefox>": "󰈹",
+			"class<Brave-browser>": "󰖟",
+			"title<Picture in picture>": "󰹗",
 			"class<steam>": "󰓓",
 			"class<kitty>": "",
 			"class<thunar>": "",
@@ -67,8 +69,17 @@
 		"show-passive-items": false
 	},
 	"clock": {
-		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-		"format-alt": "{:%d-%m-%y}"
+		"tooltip-format": "<tt>{calendar}</tt>",
+		"calendar": {
+			"mode": "month",
+			"weeks-pos": "left",
+			"format": {
+				"days": "<span color='#D3C6AA'>{}</span>",
+				"today": "<span color='#E67E80'><b><u>{}</u></b></span>",
+				"weeks": "<span color='#9DA9A0'>{}</span>",
+				"weekdays": "<span color='#9DA9A0'>{}</span>",
+			}
+		},
 	},
 	"backlight": {
 		"format": "{icon} {percent}%",
