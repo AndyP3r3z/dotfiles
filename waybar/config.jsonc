@@ -37,10 +37,10 @@
 		"format": "{icon} {windows}",
 		"show-special": true,
 		"format-icons": {
-			"default": "",
+			"default": "<span size='small'></span>",
 			"active": "<span size='larger'></span>",
-			"urgent": "",
-			"special": "",
+			"urgent": "<span size='larger'></span>",
+			"special": "<span size='small'></span>",
 		},
 		"window-rewrite-default": "󰘔",
 		"window-rewrite": {
@@ -51,7 +51,8 @@
 			"class<steam>": "󰓓",
 			"class<kitty>": "",
 			"class<thunar>": "",
-			"class<mousepad>": "",
+			"class<obsidian>": "󰎞",
+			"class<mousepad>": "󰎞",
 			"class<piper>": "",
 			"class<nwg-look>": "",
 			"class<yast.*>": "",
