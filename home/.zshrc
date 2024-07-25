@@ -157,7 +157,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
 
 # PROMPT
 eval "$(starship init zsh)"
-source ~/.config/zsh/transient-prompt/transient-prompt.zsh
+# source ~/.config/zsh/transient-prompt/transient-prompt.zsh
 
 # >>> juliaup initialize >>>
 
