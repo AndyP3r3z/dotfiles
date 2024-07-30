@@ -73,5 +73,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+# PROMPT
 eval "$(starship init bash)"
-
+# Colors for LS and LSD.
+eval $(dircolors -b ~/.dircolors)
