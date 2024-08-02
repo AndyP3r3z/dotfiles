@@ -123,37 +123,45 @@ typeset -A ZSH_HIGHLIGHT_STYLES										# Sobre-escribimos la variable.
 																	# mientras que lo que está entre [] es lo que cambiará.
 																	# Para una lista completa de lo que se puede cambiar:
 																	# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md
-
 																	# ------- Palabras reservadas ------
-ZSH_HIGHLIGHT_STYLES[builtin]='fg=blue,bold'						# Los comandos integrados de la shell.
-ZSH_HIGHLIGHT_STYLES[command]='fg=blue,bold'						# El resto de comandos (instalables y desinstalables).
+ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#7A8478'				# Comando no reconocido
+ZSH_HIGHLIGHT_STYLES[builtin]='fg=green,bold'						# Los comandos integrados de la shell.
+ZSH_HIGHLIGHT_STYLES[command]='fg=green,bold'						# El resto de comandos (instalables y desinstalables).
 ZSH_HIGHLIGHT_STYLES[precommand]='fg=magenta,bold'					# Modificadores, como "sudo"
 ZSH_HIGHLIGHT_STYLES[alias]='fg=cyan,bold'							# Los aliases.
-ZSH_HIGHLIGHT_STYLES[function]='fg=cyan,bold'						# Nombre de funciones.
-ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=magenta,bold'				# Otras palabras reservadas, como "while".
+ZSH_HIGHLIGHT_STYLES[function]='fg=green,bold'						# Nombre de funciones.
+ZSH_HIGHLIGHT_STYLES[reserved-word]='fg=red,bold'					# Otras palabras reservadas, como `while` y `for`.
 																	# ------ Opciones de Comandos ------
 ZSH_HIGHLIGHT_STYLES[single-hyphen-option]='fg=blue'				# Opciones directas, como "-la"
 ZSH_HIGHLIGHT_STYLES[double-hyphen-option]='fg=blue'				# Opciones indirectas, como "--remove"
 																	# ----------- Quotations -----------
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=green,bold'		# Comillas simples.
-ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=green'
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=green,bold'		# Comillas dobles.
-ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=green'
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=cyan,bold'			# Quotes con dólar.
-ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=cyan'
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=#079c83'		# Para los backslashes.
-ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=#079c83'
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument]='fg=cyan,bold'			# Comillas simples.
+ZSH_HIGHLIGHT_STYLES[single-quoted-argument-unclosed]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument]='fg=cyan,bold'			# Comillas dobles.
+ZSH_HIGHLIGHT_STYLES[double-quoted-argument-unclosed]='fg=cyan'
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]='fg=blue,bold'			# Quotes con dólar.
+ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument-unclosed]='fg=blue'
+ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]='fg=blue,bold'
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]='fg=blue'			# Para los backslashes.
+ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]='fg=blue'
+																	#---------------Symbols-------------
+ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]='fg=red'		# `$(` and `)`.
+ZSH_HIGHLIGHT_STYLES[commandseparator]='fg=red'						# `&&`, `||`, `;`
+ZSH_HIGHLIGHT_STYLES[redirection]='fg=red'							# `>` and `<`.
+ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]='fg=red'		# `<(` and `)`.
+
 																	#-------------- Otros --------------
-ZSH_HIGHLIGHT_STYLES[path]='fg=blue,underline'						# Ubicaciones existentes del sistema.
-ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=yellow'				# Números.
-ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=yellow'						# Otros números más raros.
-ZSH_HIGHLIGHT_STYLES[assign]='fg=magenta,bold'						# Asignación de variables.
-ZSH_HIGHLIGHT_STYLES[comment]='fg=#5C6370'							# Comentarios.
+ZSH_HIGHLIGHT_STYLES[path]='fg=magenta,underline'					# Ubicaciones existentes del sistema.
+ZSH_HIGHLIGHT_STYLES[autodirectory]='fg=magenta,underline'			# Ubicaciones existentes del sistema.
+ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=magenta'				# Números.
+ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=magenta'						# Otros números más raros.
+ZSH_HIGHLIGHT_STYLES[assign]='fg=blue'								# Asignación de variables.
+ZSH_HIGHLIGHT_STYLES[comment]='fg=#859289'							# Comentarios.
 setopt interactivecomments
 
 # AUTOSUGGESTIONS
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5f5f5f"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#374145"
 
 # PROMPT
 eval "$(starship init zsh)"
