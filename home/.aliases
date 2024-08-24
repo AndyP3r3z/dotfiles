@@ -20,7 +20,6 @@ function tremp {
 		echo "Operation aborted."
 	fi
 }
-alias termp="tremp"
 alias cd..="cd .."
 alias merge="paste"
 alias grep="grep --color=auto"
@@ -82,7 +81,8 @@ alias la="ls -A"
 alias lla="ls -lA"
 alias lt="ls --tree"
 alias lta="ls -A --tree"
-
+alias push="git push -u origin main"
+alias pull="git pull --rebase origin main"
 # Python
 alias python="cls && python3"
 alias py="python"
@@ -97,4 +97,4 @@ alias neofetch="fastfetch"
 # alias xd="toilet-deej.toilet xD"
 #alias pipes="pipes.sh -c 1 -c 2 -c 3 -c 4 -c 5 -c 6 -c 7"
 #alias matrix="cmatrix -s"
-#alias tron="ssh sshtron.zachlatta.com"
+alias tron="ssh sshtron.zachlatta.com"
