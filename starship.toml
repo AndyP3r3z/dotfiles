@@ -1,12 +1,23 @@
 format = """
-[ Ψ ](bg:black fg:white)[](fg:black bg:green)\
+$custom[](fg:black bg:green)\
 $directory[](fg:green bg:yellow)\
 $c$haskell$python$dart$julia[](fg:yellow bg:blue)\
 $git_branch$git_commit$git_metrics$git_status[](fg:blue bg:purple)\
 $cmd_duration[ ](fg:purple bg:black)
 """
-
 add_newline = true
+# Change prompt depending on root priviledges.
+[custom]
+[custom.user]
+symbol = "Ψ"
+when = '[ "$EUID" -ne 0 ]'
+format = "[ $symbol ]($style)"
+style = "fg:white"
+[custom.root]
+symbol = ""
+when = '[ "$EUID" -eq 0 ]'
+style = "fg:red"
+format = "[ $symbol ]($style)"
 
 # Path
 [directory]
