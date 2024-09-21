@@ -32,7 +32,7 @@ truncation_symbol = "../"			# Símbolo de overflow
 "Music" = " "
 "Pictures" = " "
 "Videos" = " "
-"Android" = " "
+"Android" = " " # "ﲎ"
 
 # Git
 [git_branch]
