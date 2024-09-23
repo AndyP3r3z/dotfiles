@@ -36,7 +36,7 @@ truncation_symbol = "../"			# Símbolo de overflow
 
 # Git
 [git_branch]
-symbol = " "
+symbol = " "
 style = "fg:black bg:blue"
 format = "[ $symbol $branch ]($style)"
 [git_status]
