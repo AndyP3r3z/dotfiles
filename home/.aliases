@@ -3,6 +3,7 @@
 alias cls="clear"
 alias trash="gio trash"
 alias rm="trash"
+alias ssh="TERM=xterm; ssh"
 function tremp {
 	n=$(\ls -A ~/.local/share/Trash/info/ | wc -l)
 	if [[ "$0" != "bash" ]]; then
