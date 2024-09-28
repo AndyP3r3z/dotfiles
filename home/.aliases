@@ -3,7 +3,6 @@
 alias cls="clear"
 alias trash="gio trash"
 alias rm="trash"
-alias ssh="TERM=xterm; ssh"
 function tremp {
 	n=$(\ls -A ~/.local/share/Trash/info/ | wc -l)
 	if [[ "$0" != "bash" ]]; then
@@ -88,8 +87,9 @@ alias pull="git pull --rebase origin main"
 alias python="cls && python3"
 alias py="python"
 
-# Only in kitty terminal (image cat)
+# Only in kitty terminal (image cat and ssh integration)
 alias icat='kitty +kitten icat'
+alias ssh="kitten ssh"
 
 # Useless stuff
 alias fastfetch="cls && fastfetch"
@@ -99,3 +99,11 @@ alias neofetch="fastfetch"
 #alias pipes="pipes.sh -c 1 -c 2 -c 3 -c 4 -c 5 -c 6 -c 7"
 #alias matrix="cmatrix -s"
 alias tron="ssh sshtron.zachlatta.com"
+
+
+
+
+
+
+
+
