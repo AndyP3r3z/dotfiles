@@ -1,0 +1,70 @@
+window {
+	/* font-family: "FiraCode Nerd Font Regular"; */
+	font-size: 16pt;
+}
+
+button {
+	animation: gradient_f 20s ease-in infinite;
+	background-size: 20%;
+	background-color: rgba(0,0,0,0);
+	border-radius: 20px;
+}
+
+button span {
+	font-size: 2em;
+}
+
+button:focus {
+	background-size: 35%;
+	border: 0px;
+	background-color: rgba(0,0,0,0.1);
+}
+
+button:hover {
+	background-size: 50%;
+	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	background-color: #A7C080;
+}
+
+
+#lock {
+	background-image: image(url("./icons/lock.png"));
+}
+#lock:hover {
+	background-image: image(url("./icons/lock-hover.png"));
+}
+
+#logout {
+	background-image: image(url("./icons/logout.png"));
+}
+#logout:hover {
+	background-image: image(url("./icons/logout-hover.png"));
+}
+
+#suspend {
+	background-image: image(url("./icons/sleep.png"));
+}
+#suspend:hover {
+	background-image: image(url("./icons/sleep-hover.png"));
+}
+
+#shutdown {
+	background-image: image(url("./icons/power.png"));
+}
+#shutdown:hover {
+	background-image: image(url("./icons/power-hover.png"));
+}
+
+#reboot {
+	background-image: image(url("./icons/restart.png"));
+}
+#reboot:hover {
+	background-image: image(url("./icons/restart-hover.png"));
+}
+
+#hibernate {
+	background-image: image(url("./icons/hibernate.png"));
+}
+#hibernate:hover {
+	background-image: image(url("./icons/hibernate-hover.png"));
+}

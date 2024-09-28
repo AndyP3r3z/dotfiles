@@ -143,6 +143,6 @@
 	"custom/wlogout": {
 			"tooltip": "Logout menu",
 			"format": "⏻ ",
-			"on-click": "exec wlogout",
+			"on-click": "exec wlogout --protocol layer-shell -L 450 -R 450",
 	},
 }
