@@ -27,7 +27,7 @@ truncation_length = 3				# Sólo los últimos 3 directorios
 truncation_symbol = "../"			# Símbolo de overflow
 [directory.substitutions]
 "Desktop" = " "
-"Documents" = "󰈙 "
+"Documents" = " "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
