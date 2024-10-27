@@ -6,7 +6,7 @@
 		{"type": "separator", "string": "="},
 		"break",
 		{"type": "host", "key": "  󰇅"},
-		{"type": "cpu", "key": "  "},
+		{"type": "cpu", "key": "  "},
 		"gpu",
 		{"type": "display", "key": "  "},
 		{"type": "kernel", "key": "  "},

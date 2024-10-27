@@ -40,7 +40,7 @@
 			"default": "<span size='small'></span>",
 			"active": "<span size='larger'></span>",
 			"urgent": "<span size='larger'></span>",
-			"special": "<span size='small'></span>",
+			"special": "<span size='small'></span>",
 		},
 		"window-rewrite-default": "󰘔",
 		"window-rewrite": {
@@ -105,8 +105,8 @@
 		// "scroll-step": 1, // %, can be a float
 		"format": "{icon}  {volume}%",
 		"format-bluetooth": "{icon}  {volume}%",
-		"format-bluetooth-muted": "   {volume}%",
-		"format-muted": "  {volume}%",
+		"format-bluetooth-muted": "   {volume}%",
+		"format-muted": " {volume}%",
 		"format-source": " {volume}%",
 		"format-source-muted": "",
 		"format-icons": {
