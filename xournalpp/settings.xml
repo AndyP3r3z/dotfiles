@@ -6,7 +6,7 @@
   <property name="pressureMultiplier" value="1"/>
   <property name="zoomGesturesEnabled" value="true"/>
   <property name="selectedToolbar" value="Toolbar Left Copy"/>
-  <property name="lastSavePath" value="/home/andyp3r3z/U/Física de Altas Energías/2024"/>
+  <property name="lastSavePath" value="/home/andyp3r3z/Downloads"/>
   <property name="lastOpenPath" value="/home/andyp3r3z/U/Física de Altas Energías/2024"/>
   <property name="lastImagePath" value="/home/andyp3r3z/Downloads"/>
   <property name="edgePanSpeed" value="20"/>
@@ -48,12 +48,13 @@
   <property name="eraserVisibility" value="always"/>
   <!--The icon theme, allowed values are "iconsColor", "iconsLucide"-->
   <property name="iconTheme" value="iconsColor"/>
+  <!--Dark/light mode, allowed values are "useSystem", "forceLight", "forceDark"-->
+  <property name="themeVariant" value="useSystem"/>
   <property name="highlightPosition" value="false"/>
   <property name="cursorHighlightColor" value="3015753920"/>
   <property name="cursorHighlightBorderColor" value="3015753920"/>
   <property name="cursorHighlightRadius" value="4"/>
   <property name="cursorHighlightBorderWidth" value="0"/>
-  <property name="darkTheme" value="false"/>
   <property name="useStockIcons" value="true"/>
   <property name="disableScrollbarFadeout" value="false"/>
   <property name="disableAudio" value="false"/>
@@ -274,11 +275,11 @@
       <attribute name="drawingType" type="string" value="default"/>
     </data>
     <data name="pen">
-      <attribute name="color" type="hex" value="808080"/>
+      <attribute name="color" type="hex" value="1e222a"/>
       <attribute name="drawingType" type="string" value="default"/>
       <attribute name="fill" type="int" value="0"/>
       <attribute name="fillAlpha" type="int" value="128"/>
-      <attribute name="size" type="string" value="THIN"/>
+      <attribute name="size" type="string" value="MEDIUM"/>
       <attribute name="style" type="string" value="plain"/>
     </data>
     <data name="playObject">
