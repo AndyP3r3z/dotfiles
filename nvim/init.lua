@@ -1,10 +1,11 @@
--- require("everforest")
+require("everforest")
 require("mappings")
 
-local colorscheme = "everforest"
+vim.g.everforest_colors_override = { ["bg0"] = { "#1e2326", "235" } }
+vim.g.everforest_background = "hard"
+vim.cmd.colorscheme("everforest")
+
 local options = {
-    -- ...others configs...
     termguicolors = true -- Enables 24-bit RGB color
 }
-vim.o.background = "dark"
-vim.g.everforest_background = "hard"
+
