@@ -83,9 +83,9 @@ alias lt="ls --tree"
 alias lta="ls -A --tree"
 alias push="git push -u origin main"
 alias pull="git pull --rebase origin main"
-# Python
+# Python and julia shortcuts.
 alias python="cls && python3"
-alias py="python"
+alias julia="cls && julia"
 
 # Only in kitty terminal (image cat and ssh integration)
 alias icat='kitty +kitten icat'
