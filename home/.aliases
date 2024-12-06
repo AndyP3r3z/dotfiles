@@ -68,7 +68,7 @@ alias youtube="search --youtube"
 
 # Default programs substitution
 alias mic="micro"
-alias nano="micro"
+alias nano="nvim"
 alias cl="cs -l"
 alias ca="cs -A"
 alias cla="cs -lA"
