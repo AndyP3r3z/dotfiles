@@ -44,6 +44,7 @@
 		},
 		"window-rewrite-default": "󰘔",
 		"window-rewrite": {
+			"class<neovim>": "",
 			"title<WhatsApp Web>": "",
 			"class<firefox>": "󰈹",
 			"class<Brave-browser>": "󰖟",
