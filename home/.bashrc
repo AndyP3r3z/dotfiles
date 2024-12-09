@@ -51,7 +51,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # Default text editor.
-export VISUAL=micro
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export "MICRO_TRUECOLOR=1"
 # Alias definitions.
