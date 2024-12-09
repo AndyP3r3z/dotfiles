@@ -24,6 +24,8 @@ vim.opt.listchars = {
 	tab = "▏ ",
 	trail = "·"
 }
+vim.g.python_recommended_style = 0
+vim.o.expandtab = false
 vim.opt.wrap = false
 
 -- Prompt to save when trying to quit with unsaved changes
