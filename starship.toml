@@ -67,7 +67,7 @@ style = "fg:black bg:yellow"
 format = "[$symbol $version ]($style)"
 
 [dart]
-symbol = "🎯"
+symbol = ""
 style = "fg:black bg:yellow"
 version_format = "v$major.$minor"
 format = "[ $symbol $version ]($style)"
