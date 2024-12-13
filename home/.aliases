@@ -94,16 +94,7 @@ alias ssh="kitten ssh"
 # Useless stuff
 alias fastfetch="cls && fastfetch"
 alias neofetch="fastfetch"
-# alias toilet="toilet-deej.toilet"
-# alias xd="toilet-deej.toilet xD"
 #alias pipes="pipes.sh -c 1 -c 2 -c 3 -c 4 -c 5 -c 6 -c 7"
 #alias matrix="cmatrix -s"
 alias tron="ssh sshtron.zachlatta.com"
-
-
-
-
-
-
-
 
