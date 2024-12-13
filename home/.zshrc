@@ -18,7 +18,7 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.juliaup/bin:$PATH
 # Editor de terminal por defecto
-export VISUAL=nvim
+export VISUAL=/usr/bin/edit
 export EDITOR="$VISUAL"
 export "MICRO_TRUECOLOR=1"
 
