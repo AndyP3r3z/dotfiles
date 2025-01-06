@@ -16,3 +16,18 @@ vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true })
 -- Map <C-n> to return to Normal Mode from Insert Mode
 vim.keymap.set('i', '<C-n>', '<Esc>', { noremap = true, silent = true })
 
+-- AUTO PAIR FUNCTIONS.
+local function auto_pair(pair_open, pair_close)
+	vim.keymap.set("i", pair_open, function()
+		return pair_open .. pair_close .. "<Left>"
+	end, { expr = true, noremap = true })
+end
+
+-- Auto-close pairs
+auto_pair("(", ")")
+auto_pair("[", "]")
+auto_pair("{", "}")
+auto_pair('"', '"')
+auto_pair("'", "'")
+auto_pair("`", "`")
+
