@@ -26,7 +26,13 @@ vim.o.expandtab = false
 vim.opt.wrap = false
 
 -- Prompt to save when trying to quit with unsaved changes
-vim.api.nvim_create_user_command("Q", function()
+vim.api.nvim_create_user_command("Q", function(opts)
+	-- Check `!` option
+	if opts.bang then
+		vim.cmd("q!") -- Quit without saving
+		return
+	end
+
 	if vim.bo.modified then
 		local answer = vim.fn.confirm("You have unsaved changes. Do you want to save?", "&Yes\n&No\n&Cancel", 1)
 		if answer == 1 or answer == 121 then
@@ -38,7 +44,7 @@ vim.api.nvim_create_user_command("Q", function()
 		return
 	end
 	vim.cmd("q") -- Quit if no changes
-end, {})
+end, {bang = true})
 
 vim.cmd("cabbrev q Q") -- Redirect :q to :Q
 
