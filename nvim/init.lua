@@ -1,10 +1,7 @@
-require("everforest")
-require("mappings")
+require("config.mappings")
+require("config.lazy")
 
 -- Colors
-vim.g.everforest_colors_override = { ["bg0"] = { "#1e2326", "235" } }
-vim.g.everforest_background = "hard"
-vim.g.everforest_show_eob = 0
 vim.cmd.colorscheme("everforest")
 
 local options = {
