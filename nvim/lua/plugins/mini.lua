@@ -1,4 +1,12 @@
 return {
+	-- Icons
+	{
+		enabled = true,
+		'echasnovski/mini.icons', version = false,
+		config = function()
+			require('mini.icons').setup()
+		end,
+	},
 	-- Completion
 	{
 		enabled = true,
