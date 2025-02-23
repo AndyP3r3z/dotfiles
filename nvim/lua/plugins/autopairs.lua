@@ -50,5 +50,12 @@ return {{
 				:replace_map_cr(function(_) return '<C-c>2xi<CR><C-c>O' end)
 			}
 		end
+		-- LaTeX rules.
+		npairs.add_rule(Rule("$$", "$$", {"tex", "latex"}))
+		npairs.add_rule( Rule("$", "$", "tex")
+			:with_move(function(opts)
+				 return opts.next_char == opts.char
+			end)
+		)
 	end
 }}
