@@ -8,8 +8,8 @@ return {{
 				block = "<F40>",
 			},
 			opleader = {
-				line = "<F40>",
-				block = "<C-_>",
+				line = "<C-_>",
+				block = "<F40>",
 			},
 		})
 	end,
