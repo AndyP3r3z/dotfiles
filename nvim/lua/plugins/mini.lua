@@ -2,7 +2,7 @@ return {
 	-- Icons
 	{
 		enabled = true,
-		'echasnovski/mini.icons', version = false,
+		'echasnovski/mini.icons', version = '*',
 		config = function()
 			require('mini.icons').setup()
 		end,
@@ -10,7 +10,7 @@ return {
 	-- Completion
 	{
 		enabled = true,
-		'echasnovski/mini.completion', version = false,
+		'echasnovski/mini.completion', version = '*',
 		config = function()
 			require('mini.completion').setup()
 		end,
@@ -18,9 +18,17 @@ return {
 	-- Move
 	{
 		enabled = true,
-		'echasnovski/mini.move', version = false,
+		'echasnovski/mini.move', version = '*',
 		config = function()
 			require('mini.move').setup()
+		end,
+	},
+	-- Surround
+	{
+		enabled = true,
+		'echasnovski/mini.surround', version = '*',
+		config = function()
+			require('mini.surround').setup()
 		end,
 	},
 }
