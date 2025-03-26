@@ -81,8 +81,6 @@ alias la="ls -A"
 alias lla="ls -lA"
 alias lt="ls --tree"
 alias lta="ls -A --tree"
-alias push="git push -u origin main"
-alias pull="git pull --rebase origin main"
 # Python and julia shortcuts.
 alias python="cls && python3"
 alias julia="cls && julia"

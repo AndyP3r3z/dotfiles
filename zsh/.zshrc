@@ -1,36 +1,23 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=1000
-HISTFILESIZE=2000
-SAVEHIST=2000
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename "$HOME/.zshrc"
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+
+zstyle :compinstall filename "$XDG_CONFIG_HOME/.zshrc"
+autoload -Uz compinit && compinit
+autoload -U colors && colors
 
 #------------------------------------------------MY EDITS---------------------------------------------------
-# Path para personales, python y julia
-export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.juliaup/bin:$PATH
-# Editor de terminal por defecto
-export VISUAL=/usr/bin/edit
-export EDITOR="$VISUAL"
-export "MICRO_TRUECOLOR=1"
 
-# Añadir mis aliases.
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
-fi
+# Shell options
+setopt append_history inc_append_history share_history
+setopt autocd
+setopt no_case_glob no_case_match
+setopt globdots
+setopt interactivecomments
 
-# NEOFETCH
-if [ "$EUID" -ne 0 ]
-then fastfetch && echo "" && lsd
-fi
+# System info show on login shell (no root).
+[ "$(tty)" != "/dev/tty1" ] && [ "$EUID" -ne 0 ] && fastfetch && echo "" && lsd
+# My aliases.
+[ -f "$XDG_CONFIG_HOME/shell/aliases" ] && source "$XDG_CONFIG_HOME/shell/aliases"
+
 # SCREENSAVER
 # TMOUT=300
 # TRAPALRM() {
@@ -43,10 +30,6 @@ fi
 		# return 0
 	# fi
 # }
-
-
-# ADD PYTHON PACKAGES TO PATH.
-export PYTHONPATH="${PYTHONPATH}:$HOME/.local/bin"
 
 # SHIFT+ARROW SELECTION
 bindkey -e
@@ -111,11 +94,11 @@ bindkey '^[[1;2D' select-char-left
 bindkey '^[[1;2C' select-char-right
 
 # AUTO CLOSE PARENTHESIS:
-source ~/.config/zsh/zsh-autopair/autopair.zsh
+source $XDG_CONFIG_HOME/zsh/zsh-autopair/autopair.zsh
 autopair-init
 
 # SYNTAX HIGHLIGHTING:
-source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	# Añadimos el archivo.
+source $XDG_CONFIG_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh	# Añadimos el archivo.
 #ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)			# Le decimos que funcionen estas cosas.
 																	# Lo que sigue aquí es para cambiar los colores.
 typeset -A ZSH_HIGHLIGHT_STYLES										# Sobre-escribimos la variable.
@@ -157,15 +140,14 @@ ZSH_HIGHLIGHT_STYLES[arithmetic-expansion]='fg=magenta'				# Números.
 ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=magenta'						# Otros números más raros.
 ZSH_HIGHLIGHT_STYLES[assign]='fg=blue'								# Asignación de variables.
 ZSH_HIGHLIGHT_STYLES[comment]='fg=#859289'							# Comentarios.
-setopt interactivecomments
 
 # AUTOSUGGESTIONS
-source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $XDG_CONFIG_HOME/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#374145"
 
 # PROMPT
 eval "$(starship init zsh)"
-# source ~/.config/zsh/transient-prompt/transient-prompt.zsh
+# source $XDG_CONFIG_HOME/zsh/transient-prompt/transient-prompt.zsh
 # Colors for LS and LSD.
 eval $(dircolors -b ~/.dircolors)
 # >>> juliaup initialize >>>
