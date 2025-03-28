@@ -1,0 +1,61 @@
+#! /usr/bin/sh
+# cmdline utilities
+function tremp {
+	n=$(\ls -A ~/.local/share/Trash/info/ | wc -l)
+	if [[ "$0" != "bash" ]]; then
+		setopt localoptions rmstarsilent
+		read -k "confirmation?Sure you want to delete $n file(s) permanently [yN]? "
+	else
+		read -n 1 -p "Sure you want to delete $n files permanently [yN]? " confirmation
+	fi
+	echo -e "\n"
+	if [[ $confirmation -eq "y" || $confirmation -eq "Y" ]]; then
+		\rm -rf ~/.local/share/Trash/files/
+		\rm -rf ~/.local/share/Trash/info/
+		mkdir ~/.local/share/Trash/info/ ~/.local/share/Trash/files/
+	else
+		echo "Operation aborted."
+	fi
+}
+function detach {
+	# Opens a program and detaches it from the current terminal.
+	$@ < /dev/null &> /dev/null &
+}
+function cs {
+	lsargs=""
+	directory=""
+	for i in $@; do
+		case $i in
+		# Falgs.
+			-*)
+				# Catch single dash (`-`) as a directory.
+				if [ ! -z "${i:1}" ]; then
+					lsargs="$lsargs $i"
+				else
+					directory="$i"
+				fi
+				;;
+		# Directory save.
+			*) directory="$i";;
+		esac
+	done
+	# Fix lsargs.
+	lsargs="${lsargs:1}"
+	# Change dir, clear screen and list contents.
+	cd $directory && cls && lsd $lsargs
+}
+alias cl="cs -l"
+alias ca="cs -A"
+alias cla="cs -lA"
+alias ct="cs --tree"
+alias cta="cs -A --tree"
+
+function bindir {
+	dirname $(which $1)
+}
+alias dirbin="bindir"
+function cstobin {
+	cs $(bindir $1);
+}
+alias csbin="cstobin"
+

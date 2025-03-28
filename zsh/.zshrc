@@ -15,8 +15,9 @@ setopt interactivecomments
 
 # System info show on login shell (no root).
 [ "$(tty)" != "/dev/tty1" ] && [ "$EUID" -ne 0 ] && fastfetch && echo "" && lsd
-# My aliases.
+# My aliases and functions.
 [ -f "$XDG_CONFIG_HOME/shell/aliases" ] && source "$XDG_CONFIG_HOME/shell/aliases"
+[ -f "$XDG_CONFIG_HOME/shell/functions" ] && source "$XDG_CONFIG_HOME/shell/functions"
 
 # SCREENSAVER
 # TMOUT=300
