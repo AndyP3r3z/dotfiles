@@ -39,6 +39,8 @@ function cs {
 				# Verificar que no sea un sólo dash (`-`).
 				if [ ! -z "${i:1}" ]; then
 					lsargs="$lsargs $i"
+				else
+					directory="$i"
 				fi
 				;;
 		# Directorio.
