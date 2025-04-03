@@ -1,7 +1,5 @@
-bindkey -e
 
-zstyle :compinstall filename "$XDG_CONFIG_HOME/.zshrc"
-autoload -Uz compinit && compinit
+autoload -Uz compinit && compinit -d "$ZSH_COMPDUMP"
 autoload -U colors && colors
 
 #------------------------------------------------MY EDITS---------------------------------------------------
