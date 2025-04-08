@@ -10,12 +10,11 @@ vim.opt.whichwrap:append {
 }
 
 -- Map <C-c> to copy selected text to the clipboard in Visual Mode
-vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true })
+-- vim.keymap.set('v', '<C-c>', '"+y', { noremap = true, silent = true })
 -- Undo with U
 vim.keymap.set('n', 'U', '<C-r>', { noremap = true })
 
 -- Use `<Tab>` and `<S-Tab>` for navigation through completion list
-
 local imap_expr = function(lhs, rhs)
 	vim.keymap.set('i', lhs, rhs, { expr = true })
 end

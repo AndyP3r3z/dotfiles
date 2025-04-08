@@ -1,7 +1,16 @@
+
 return {{
 	"neovim/nvim-lspconfig",
 	config = function()
-		require('lspconfig').pyright.setup({})
-		require('lspconfig').texlab.setup({})
+		-- local border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+		-- local handlers = {
+		-- 	["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {border = border}),
+		-- 	["textDocument/signatureHelp"] = vim.lsp.with(
+		-- 		vim.lsp.handlers.signature_help,
+		-- 		{border = border, title = "Signature"}),
+		-- }
+		-- vim.diagnostic.config({float = {border = border}})
+		require('lspconfig').pyright.setup({handlers = handlers})
+		require('lspconfig').texlab.setup({handlers = handlers})
 	end,
 }}
