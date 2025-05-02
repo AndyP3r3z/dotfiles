@@ -1,4 +1,3 @@
-
 return {{
 	"neovim/nvim-lspconfig",
 	config = function()
@@ -12,5 +11,6 @@ return {{
 		-- vim.diagnostic.config({float = {border = border}})
 		require('lspconfig').pyright.setup({handlers = handlers})
 		require('lspconfig').texlab.setup({handlers = handlers})
+		require('lspconfig').tinymist.setup({handlers = handlers})
 	end,
 }}
