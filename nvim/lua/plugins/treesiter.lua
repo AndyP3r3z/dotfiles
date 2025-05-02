@@ -3,7 +3,7 @@ return {{
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = {"c", "lua", "query", "python", "julia", "latex", "comment", "markdown", "markdown_inline"},
-			auto_install = false,
+			auto_install = true,
 			highlight = {enable = true},
 		})
 	end,
