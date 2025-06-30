@@ -14,18 +14,18 @@ export VISUAL=/usr/bin/edit
 export EDITOR="$VISUAL"
 export "MICRO_TRUECOLOR=1"
 
-# Export other PATH variables.
-export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.juliaup/bin:$PATH
-export PATH=$PATH:/usr/local/go/bin
-
 # Language paths
 export PYTHONPATH="${PYTHONPATH}:$HOME/.local/bin"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+
+# Export other PATH variables.
+export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.juliaup/bin:$PATH
+export PATH=$GOBIN:/usr/local/go/bin:$PATH
 
 # History
 HISTFILE="$XDG_CACHE_HOME/zsh/history"
