@@ -9,8 +9,10 @@ return {{
 		-- 		{border = border, title = "Signature"}),
 		-- }
 		-- vim.diagnostic.config({float = {border = border}})
-		require('lspconfig').pyright.setup({handlers = handlers})
-		require('lspconfig').texlab.setup({handlers = handlers})
-		require('lspconfig').tinymist.setup({handlers = handlers})
+		require('lspconfig').pyright.setup({})
+		require('lspconfig').texlab.setup({})
+		require('lspconfig').tinymist.setup({})
+		require('lspconfig').gopls.setup({})
+		require('lspconfig').qmlls.setup({cmd = {"qmlls", "-E"}})
 	end,
 }}

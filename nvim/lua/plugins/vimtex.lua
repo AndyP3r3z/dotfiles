@@ -1,6 +1,6 @@
 return {{
 	"lervag/vimtex",
-	enabled = true,
+	enabled = false,
 	config = function()
 		-- VimTeX configuration
 		vim.g.vimtex_view_method = "sioyek"
