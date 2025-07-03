@@ -1,12 +1,21 @@
-# This configuration is not supported yet,
-# I'd have to either wait until it is supported
-# or build the program from source,
 name:
-    Android: ﲎ
-    Downloads: 
-    Music: 
-    Code: 
-    U: 󱓷
-    Games: 󰊖
+  android: 
+  downloads: 
+  music: 
+  code: 
+  u: 󱓷
+  games: 󰊖
+  pictures: 
+  steam: 
+extension:
+  bib: 󱉟
+  eps: 󰫨
+  gnuplot: 
+  gpi: 
+  mscz: 󰽰
+  out: 
+  tab: 󰋅
+  tsv: 
+  typ: 
 filetype:
-    dir: 
+  dir: 
