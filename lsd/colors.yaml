@@ -1,30 +1,33 @@
-user: 230
+# TODO: Work in progress. It's better to see the following and start from the
+# beginning:
+# https://github.com/neuromaancer/everforest_collection/blob/main/eza/theme.yml
+user: cyan
 group: 187
 permission:
-  read: dark_green
-  write: dark_yellow
-  exec: dark_red
+  read: dark_blue
+  write: dark_magenta
+  exec: dark_cyan
   exec-sticky: 5
-  no-access: 245
+  no-access: dark_red
   octal: 6
   acl: dark_cyan
-  context: cyan
+  context: dark_cyan
 date:
-  hour-old: dark_cyan
-  day-old: dark_cyan
-  older: cyan
+  hour-old: 7
+  day-old: white
+  older: 8
 size:
-  none: 245
-  small: 229
-  medium: 216
-  large: 172
+  none: 8
+  small: dark_green
+  medium: dark_yellow
+  large: dark_red
 inode:
-  valid: 13
-  invalid: 245
+  valid: dark_cyan
+  invalid: dark_red
 links:
-  valid: 13
-  invalid: 245
-tree-edge: 245
+  valid: dark_cyan
+  invalid: dark_red
+tree-edge: white
 git-status:
   default: 245
   unmodified: 245
