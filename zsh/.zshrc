@@ -2,8 +2,6 @@
 autoload -Uz compinit && compinit -d "$ZSH_COMPDUMP"
 autoload -U colors && colors
 
-#------------------------------------------------MY EDITS---------------------------------------------------
-
 # Shell options
 setopt append_history inc_append_history share_history
 setopt autocd
@@ -86,12 +84,4 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#374145"
 eval "$(starship init zsh)"
 # source $XDG_CONFIG_HOME/zsh/transient-prompt/transient-prompt.zsh
 # Colors for LS and LSD.
-eval $(dircolors -b ~/.dircolors)
-# >>> juliaup initialize >>>
-
-# !! Contents within this block are managed by juliaup !!
-
-path=("$HOME/.juliaup/bin" $path)
-export PATH
-
-# <<< juliaup initialize <<<
+eval $(dircolors "$XDG_CONFIG_HOME/dircolors")
