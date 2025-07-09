@@ -11,6 +11,10 @@ return {{
 				line = "<C-_>",
 				block = "<F40>",
 			},
+			mappings = {
+				basic = true,
+				extra = true,
+			}
 		})
 	end,
 }}
