@@ -24,7 +24,7 @@ vim.api.nvim_create_user_command("Q", function(opts)
 	local names = {}
 	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
 		if not vim.api.nvim_buf_is_loaded(buf) then goto continue end
-		if not vim.api.nvim_buf_get_option(buf, "modified") then goto continue end
+		if not vim.api.nvim_get_option_value("modified", { buf = buf }) then goto continue end
 		table.insert(buffers, buf)
 		local name = vim.api.nvim_buf_get_name(buf)
 		-- Fallback if buffer has no name
