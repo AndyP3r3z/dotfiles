@@ -10,7 +10,7 @@ vim.lsp.enable({
 
 -- Diagnostics
 vim.diagnostic.config({
-	virtual_lines = true,
+	virtual_lines = { current_line = true },
 	signs = {
 		text = {
 			[ vim.diagnostic.severity.ERROR ] = "✘",
@@ -23,7 +23,7 @@ vim.diagnostic.config({
 	update_in_insert = true,
 	severity_sort = true,
 	float = {
-		border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"},
+		border = "rounded",
 		source = true,
 		header = "",
 		prefix = "",
