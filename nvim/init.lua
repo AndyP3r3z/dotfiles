@@ -7,7 +7,11 @@ local opts = vim.opt
 -- Visual options
 vim.cmd.colorscheme("everforest")
 opts.termguicolors = true
+vim.api.nvim_set_hl(0, "Normal", {bg = 'none'})
+vim.api.nvim_set_hl(0, "NormalNC", {bg = 'none'})
+vim.api.nvim_set_hl(0, "EndOfBuffer", {bg = 'none'})
 vim.api.nvim_set_hl(0, "CursorLineNr", { bg="#2E383C", fg="#859289" })
+vim.opt.fillchars = { eob = ' ' }
 opts.list = true
 opts.listchars = {
 	tab = "▏ ",
