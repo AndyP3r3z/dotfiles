@@ -4,11 +4,11 @@
 user: cyan
 group: 187
 permission:
-  read: dark_blue
-  write: dark_magenta
-  exec: dark_cyan
+  read: dark_green
+  write: dark_yellow
+  exec: dark_red
   exec-sticky: 5
-  no-access: dark_red
+  no-access: 8
   octal: 6
   acl: dark_cyan
   context: dark_cyan

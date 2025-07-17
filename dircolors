@@ -72,7 +72,7 @@ STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 30;42 # dir that is other-writable (o+w) and not sticky
 STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
 # This is for files with execute permission:
-EXEC 01;32
+EXEC 01;31
 # ===================================================================
 # File extension attributes
 # ===================================================================
@@ -83,69 +83,69 @@ EXEC 01;32
 # init strings for separate cases, those will be honored.
 #
 # If you use DOS-style suffixes, you may want to uncomment the following:
-#.cmd 01;32 # executables (bright green)
-#.exe 01;32
-#.com 01;32
-#.btm 01;32
-#.bat 01;32
+#.cmd 01;31 # executables (bright red)
+#.exe 01;31
+#.com 01;31
+#.btm 01;31
+#.bat 01;31
 # Or if you want to color scripts even if they do not have the
 # executable bit actually set.
-#.sh 01;32
-#.csh 01;32
-# archives or compressed (bright red)
-.7z 01;31
-.ace 01;31
-.alz 01;31
-.apk 01;31
-.arc 01;31
-.arj 01;31
-.bz 01;31
-.bz2 01;31
-.cab 01;31
-.cpio 01;31
-.crate 01;31
-.deb 01;31
-.drpm 01;31
-.dwm 01;31
-.dz 01;31
-.ear 01;31
-.egg 01;31
-.esd 01;31
-.gz 01;31
-.jar 01;31
-.lha 01;31
-.lrz 01;31
-.lz 01;31
-.lz4 01;31
-.lzh 01;31
-.lzma 01;31
-.lzo 01;31
-.pyz 01;31
-.rar 01;31
-.rpm 01;31
-.rz 01;31
-.sar 01;31
-.swm 01;31
-.t7z 01;31
-.tar 01;31
-.taz 01;31
-.tbz 01;31
-.tbz2 01;31
-.tgz 01;31
-.tlz 01;31
-.txz 01;31
-.tz 01;31
-.tzo 01;31
-.tzst 01;31
-.udeb 01;31
-.war 01;31
-.whl 01;31
-.wim 01;31
-.xz 01;31
-.z 01;31
-.zip 01;31
-.zoo 01;31
-.zst 01;31
+#.sh 01;31
+#.csh 01;31
+# archives or compressed (bright yellow)
+.7z 01;33
+.ace 01;33
+.alz 01;33
+.apk 01;33
+.arc 01;33
+.arj 01;33
+.bz 01;33
+.bz2 01;33
+.cab 01;33
+.cpio 01;33
+.crate 01;33
+.deb 01;33
+.drpm 01;33
+.dwm 01;33
+.dz 01;33
+.ear 01;33
+.egg 01;33
+.esd 01;33
+.gz 01;33
+.jar 01;33
+.lha 01;33
+.lrz 01;33
+.lz 01;33
+.lz4 01;33
+.lzh 01;33
+.lzma 01;33
+.lzo 01;33
+.pyz 01;33
+.rar 01;33
+.rpm 01;33
+.rz 01;33
+.sar 01;33
+.swm 01;33
+.t7z 01;33
+.tar 01;33
+.taz 01;33
+.tbz 01;33
+.tbz2 01;33
+.tgz 01;33
+.tlz 01;33
+.txz 01;33
+.tz 01;33
+.tzo 01;33
+.tzst 01;33
+.udeb 01;33
+.war 01;33
+.whl 01;33
+.wim 01;33
+.xz 01;33
+.z 01;33
+.zip 01;33
+.zoo 01;33
+.zst 01;33
 # image formats
 .avif 01;35
 .jpg 01;35
