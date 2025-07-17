@@ -51,6 +51,7 @@ opts.splitright = true
 opts.splitbelow = true
 vim.g.python_recommended_style = 0
 opts.clipboard = "unnamedplus"
+opts.winborder = 'rounded'
 
 vim.cmd([[
   cabbrev <expr> q (getcmdtype() == ':' && getcmdline() ==# 'q') ? 'Q' : 'q'
