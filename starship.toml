@@ -1,9 +1,9 @@
 format = """
-$custom[](fg:#1E2326 bg:green)\
-$directory[](fg:green bg:yellow)\
-$c$haskell$python$dart$julia[](fg:yellow bg:blue)\
-$git_branch$git_commit$git_metrics$git_status[](fg:blue bg:purple)\
-$cmd_duration[ ](fg:purple bg:#1E2326)
+[ ](fg:black)$custom[](fg:black bg:green)\
+$directory[](fg:green bg:red)\
+$git_branch$git_commit$git_metrics$git_status[](fg:red bg:blue)\
+$c$haskell$python$dart$julia[](fg:blue bg:black)\
+$cmd_duration[ ](fg:black)
 """
 add_newline = true
 # Change prompt depending on root priviledges.
@@ -12,11 +12,11 @@ add_newline = true
 symbol = "Ψ"
 when = '[ "$EUID" -ne 0 ]'
 format = "[ $symbol ]($style)"
-style = "fg:white"
+style = "fg:white bg:black"
 [custom.root]
 symbol = ""
 when = '[ "$EUID" -eq 0 ]'
-style = "fg:red"
+style = "fg:red bg:black"
 format = "[ $symbol ]($style)"
 
 # Path
@@ -37,43 +37,43 @@ truncation_symbol = "../"			# Símbolo de overflow
 # Git
 [git_branch]
 symbol = " "
-style = "fg:#1E2326 bg:blue"
+style = "fg:#1E2326 bg:red"
 format = "[ $symbol $branch ]($style)"
 [git_status]
-style = "fg:#1E2326 bg:blue"
+style = "fg:#1E2326 bg:red"
 format = "[$all_status$ahead_behind ]($style)"
 
 # Command duration
 [cmd_duration]
-style = "fg:#1E2326 bg:purple"
+style = "bg:black"
 format = "[  $duration ]($style)"
 
 # Programming Languages
 [c]
 symbol = ""
-style = "fg:#1E2326 bg:yellow"
+style = "fg:#1E2326 bg:blue"
 format = "[ $symbol ($name $version) ]($style)"
 
 [python]
 symbol = ""
-style = "fg:#1E2326 bg:yellow"
+style = "fg:#1E2326 bg:blue"
 version_format = "v$major.$minor"
 pyenv_prefix = " env"
 format = "[ $symbol $version$pyenv_prefix $virtualenv ]($style)"
 
 [haskell]
 symbol = ""
-style = "fg:#1E2326 bg:yellow"
+style = "fg:#1E2326 bg:blue"
 format = "[$symbol $version ]($style)"
 
 [dart]
 symbol = ""
-style = "fg:#1E2326 bg:yellow"
+style = "fg:#1E2326 bg:blue"
 version_format = "v$major.$minor"
 format = "[ $symbol $version ]($style)"
 
 [julia]
 symbol = ""
-style = "fg:#1E2326 bg:yellow"
+style = "fg:#1E2326 bg:blue"
 version_format = "v$major.$minor"
 format = "[ $symbol $version ]($style)"
