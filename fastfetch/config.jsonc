@@ -34,8 +34,8 @@
 	"display": {
 		"separator": "  ~> ",
 		"color": {
-			"keys": "green",
-			"title": "yellow",
+			"keys": "cyan",
+			"title": "red",
 		},
 		
 	}

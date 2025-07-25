@@ -45,7 +45,7 @@ format = "[$all_status$ahead_behind ]($style)"
 
 # Command duration
 [cmd_duration]
-style = "bg:black"
+style = "bg:black fg:#9DA9A0"
 format = "[  $duration ]($style)"
 
 # Programming Languages
