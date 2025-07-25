@@ -1,0 +1,26 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Andy Pérez
+	email = andy.perez.amado@gmail.com
+[alias]
+	st = status -s
+	stat = status
+	pll = pull --rebase
+	psh = push -u
+[core]
+	pager = delta
+	askPass = 
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	side-by-side = true
+	detect-dark-light = auto
+	features = chameleon
+	syntax-theme = Everforest Dark
+[merge]
+	conflictstyle = zdiff3
+[include]
+	path = ~/.config/delta/themes.gitconfig
