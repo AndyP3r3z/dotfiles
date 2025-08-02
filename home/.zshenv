@@ -30,6 +30,7 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$GOBIN:/usr/local/go/bin:$PATH"
+export PATH="$PATH:$PYTHONPATH"
 export XCURSOR_PATH="$XDG_DATA_HOME/icons"
 
 # History.
