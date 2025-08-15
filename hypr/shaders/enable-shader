@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#
+# Date:    2025/08/15
+# Author:  andyp3r3z
+#
+# script to enable shader with hyprctl
+
+hyprctl keyword decoration:screen_shader `realpath "$1"`
