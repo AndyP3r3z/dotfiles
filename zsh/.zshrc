@@ -3,7 +3,7 @@ autoload -Uz compinit && compinit -d "$ZSH_COMPDUMP"
 autoload -U colors && colors
 
 # Shell options
-setopt append_history inc_append_history share_history
+setopt append_history inc_append_history share_history histignoredups
 setopt autocd
 setopt no_case_glob no_case_match
 setopt globdots
