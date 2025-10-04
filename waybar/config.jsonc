@@ -11,6 +11,7 @@
 	// Choose the order of the modules
 	"modules-left": [
 		// "hyprland/window",
+		"custom/menu",
 		"hyprland/workspaces",
 	],
 		"modules-center": [
@@ -42,7 +43,7 @@
 			"urgent": "<span size='larger'></span>",
 			"special": "<span size='small'></span>",
 		},
-		"window-rewrite-default": "󰘔",
+		"window-rewrite-default": "",
 		"window-rewrite": {
 			"class<neovim>": "",
 			"title<WhatsApp Web>": "",
@@ -120,6 +121,11 @@
 			"default": ["", "", ""]
 		},
 		"on-click": "pavucontrol"
+	},
+	"custom/menu": {
+		"tooltip": false,
+		"format": " ",
+		"on-click": "pkill wofi || wofi --show drun --allow-images true --insensitive true --matching multi-contains",
 	},
 	"custom/notification": {
 		"tooltip": false,

@@ -22,10 +22,15 @@ keymap.set('n', 'U', '<C-r>', { noremap = true })
 -- Visual stay in indent mode.
 keymap.set('v', "<", "<gv", options)
 keymap.set('v', ">", ">gv", options)
+keymap.set('v', '<BS>', '<Del>')
 
 -- Scrolling and centering when searching.
 keymap.set('n', 'n', 'nzz')
 keymap.set('n', 'N', 'Nzz')
+
+-- Insert mode mappings.
+keymap.set('i', '<C-BS>', '<C-o>db')
+keymap.set('i', '<C-Del>', '<C-o>dw')
 
 -- Use `<Tab>` and `<S-Tab>` for navigation through completion list
 local imap_expr = function(lhs, rhs)
