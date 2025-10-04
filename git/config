@@ -17,9 +17,11 @@
 	navigate = true
 	line-numbers = true
 	side-by-side = true
+	tabs = 4
 	detect-dark-light = auto
-	features = chameleon
+	features = ghost-mantis
 	syntax-theme = Everforest Dark
+	hyperlinks = true
 [merge]
 	conflictstyle = zdiff3
 [include]
