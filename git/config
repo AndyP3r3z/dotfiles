@@ -8,6 +8,7 @@
 	stat = status
 	pll = pull --rebase
 	psh = push -u
+	unstage = restore --staged
 [core]
 	pager = delta
 	askPass = 
