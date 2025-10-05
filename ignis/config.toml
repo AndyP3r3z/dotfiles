@@ -1,0 +1,25 @@
+[statusbar]
+anchor = ["left", "top", "right"]
+padding = "0px"
+margins = {top = 8, left = 9, right = 9, bottom = -5}
+border_radius = "30px"
+
+[statusbar.modules]
+start = ["app_launcher", "window_title", "workspaces"]
+center = ["clock"]
+end = ["system_tray", "battery", "power_menu"]
+
+[statusbar.window_title]
+icon = true
+title = false
+
+[statusbar.workspaces]
+spacing = 0
+
+[statusbar.clock]
+style = "background: none;"
+update_at = 500
+format = "%H:%M"
+
+[statusbar.power_menu]
+command = "wlogout --protocol layer-shell -L 450 -R 450"
