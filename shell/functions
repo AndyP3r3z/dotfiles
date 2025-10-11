@@ -58,4 +58,7 @@ function cstobin {
 	cs $(bindir $1);
 }
 alias csbin="cstobin"
-
+function ripgrep {
+	\rg --json "$@" | delta;
+}
+alias rg="ripgrep"
