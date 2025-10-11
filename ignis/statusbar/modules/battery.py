@@ -13,10 +13,11 @@ def battery_item(device: UPowerDevice, icon: bool, percentage: bool) -> Box:
 		child=child)
 	return box
 
-def battery(icon: bool = True,  percentage: bool = True) -> Box:
+def main(icon: bool = True,  percentage: bool = True) -> Box:
 	return Box(
 		setup=lambda slf: BAT.connect(
 			"battery-added",
 			lambda _, device: slf.append(battery_item(device, icon, percentage))
-		)
+		),
+		css_classes=["st-battery"]
 	)

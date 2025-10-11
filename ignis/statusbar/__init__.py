@@ -1,2 +1,2 @@
-from .statusbar import statusbar
-__all__ = ["statusbar"]
+from .statusbar import main
+__all__ = ["main"]

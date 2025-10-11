@@ -9,10 +9,10 @@ def update(lbl: Label, format: str) -> None:
 	lbl.set_label(text)
 	return
 
-def clock(format: str = "%H:%M:%S", update_at: int = 300, style: str = "") -> Button:
+def main(format: str = "%H:%M:%S", update_at: int = 300) -> Button:
 	label: Label = Label()
 	Poll(update_at, lambda _: update(label, format))
 	return Button(
 		child=label,
-		style=style
+		css_classes=["st-clickable"]
 	)

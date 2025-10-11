@@ -18,13 +18,14 @@ def tray_item(item: SystemTrayItem, size: int) -> Button:
 		on_click=lambda _: menu.popup() if menu else None,
 		setup=lambda slf: item.connect("removed", lambda _: slf.unparent()),
 		on_right_click=lambda _: create_task(item.activate_async()),
-		style="background: none",
+		css_classes=["st-clickable"]
 	)
 
-def system_tray(icon_size: int = 24, spacing: int = 0) -> Box:
+def main(icon_size: int = 24, spacing: int = 0) -> Box:
 	return Box(
 		setup=lambda slf: TRAY.connect(
 			"added",
 			lambda _, item: slf.append(tray_item(item, icon_size))),
+		css_classes=["st-system-tray"],
 		spacing=spacing
 	)

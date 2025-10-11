@@ -13,7 +13,7 @@ def _assert_secure_module(name: str) -> None:
 	name = name.strip()
 	not_valid_identifier_error: str = f"'{name}' is not a valid identifier."
 	not_existing_module_error: str = f"'modules.{name}' doesn't exist. Make sure your module inside `{CONFIG_DIR}/modules`."
-	not_existing_callable_error: str = f"No callable named '{name}' in 'modules.{name}'. Make sure your module name and function are called the same."
+	not_existing_callable_error: str = f"No callable named 'main' in 'modules.{name}'. Make sure your module name and function are called the same."
 	# 1. Make sure it is secure.
 	if iskeyword(name) or not name.isidentifier():
 		raise ValueError(not_valid_identifier_error)
@@ -24,7 +24,7 @@ def _assert_secure_module(name: str) -> None:
 	except ModuleNotFoundError:
 		raise ModuleNotFoundError(not_existing_module_error)
 	_modules[name] = module
-	func: Any | None = getattr(module, name, None)
+	func: Any | None = getattr(module, 'main', None)
 	if not callable(func):
 		raise ValueError(not_existing_callable_error)
 	return
@@ -33,7 +33,7 @@ def _create_module(name: str, **kwargs) -> Any:
 	name = name.strip()
 	module_kwargs: dict[str, Any] | None = kwargs.get(name)
 	module: ModuleType = _modules[name]
-	func: Callable = getattr(module, name)
+	func: Callable = getattr(module, 'main')
 	if module_kwargs is None: return func()
 	return func(**module_kwargs)
 
@@ -46,16 +46,15 @@ def _create_style(
 		style += f"{k.replace('_', '-')}: {v};"
 	return style
 
-def statusbar(
+def main(
 		anchor: list[Literal['left', 'top', 'right']] | None = ["left", "top", "right"],
 		margins: dict[Literal['top', 'left', 'right', 'bottom'], int] = {"top": 0, "left": 0, "right": 0, "bottom": 0},
-		padding: str = "0px",
-		border_radius: str | None = None,
-		font_family: str | None = None,
 		modules: dict[Literal['start', 'center', 'end'], str | list[str] | None] = {"start": None, "center": None, "end": None},
+		css_classes: list[str] | None = None,
 		**kwargs: Any
 	) -> Window:
-	print(kwargs)
+	css_classes = css_classes or []
+	css_classes = list(set( css_classes + ['st-bar'] ))
 	for value in modules.values():
 		if value is None: continue
 		assert isinstance(value, (list, str)), "Modules must be a string or a list of strings."
@@ -63,7 +62,6 @@ def statusbar(
 		for mod_name in value:
 			_assert_secure_module(mod_name)
 		continue
-	style: str = _create_style(border_radius=border_radius, font_family=font_family)
 	return Window(
 		namespace="status_bar",
 		anchor=anchor, # type: ignore
@@ -71,7 +69,7 @@ def statusbar(
 		margin_left=margins.get("left", 0),
 		margin_right=margins.get("right", 0),
 		margin_bottom=margins.get("bottom", 0),
-		style=style,
+		css_classes=css_classes,
 		exclusivity="exclusive",
 		child=CenterBox(
 			vertical=False,
@@ -79,21 +77,19 @@ def statusbar(
 				child=[
 					_create_module(m, **kwargs)
 					for m in modules["start"]], # type: ignore
-				style=f"padding: {padding};"
+				css_classes=["st-bar-start"],
 			) if modules.get("start") else None,
 			center_widget=Box(
 				child=[
 					_create_module(m, **kwargs)
 					for m in modules["center"]], # type: ignore
-				style=f"padding: {padding};"
+				css_classes=["st-bar-center"],
 			) if modules.get("center") else None,
 			end_widget=Box(
 				child=[
 					_create_module(m, **kwargs)
 					for m in modules["end"]], # type: ignore
-				style=f"padding: {padding};"
+				css_classes=["st-bar-end"],
 			) if modules.get("end") else None,
 		)
 	)
-
-

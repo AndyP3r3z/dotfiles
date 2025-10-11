@@ -5,15 +5,31 @@
 #
 # Ignis configuration file.
 
-from tomllib import load as load_toml
+from types import ModuleType
 from typing import Any
+from importlib import import_module
 from os.path import dirname
 
-from statusbar import statusbar
+from ignis.css_manager import CssManager, CssInfoPath
+from ignis.utils import get_current_dir
 
-CONFIG_DIR: str = dirname(__file__)
+# This is where the real config lives (more declarative).
+from params import PARAMS
 
-with open(f"{CONFIG_DIR}/config.toml", "rb") as config_file:
-	BAR_CONFIG: dict[str, Any] = load_toml(config_file)["statusbar"]
+# This imports all modules declared in `PARAMS` dict.
+# You should be able to import your modules as if you were using
+# `from module_name import main`, where `main` is the function that will be
+# executed with the params given.
 
-statusbar(**BAR_CONFIG)
+css_manager: CssManager = CssManager.get_default()
+css_manager.apply_css(
+	CssInfoPath(
+		name="main",
+		path=get_current_dir()+"/style.scss"))
+
+for module_name, module_config in PARAMS.items():
+	module: ModuleType = import_module(module_name)
+	func: Any | None = getattr(module, 'main', None)
+	if not callable(func):
+		raise ValueError(f"`from {module_name} import main` failed.")
+	func(**module_config)

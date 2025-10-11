@@ -1,0 +1,57 @@
+/* background-color: #272E33; */
+.st-bar {
+  border-radius: 30px;
+  border-style: none;
+  color: #D3C6AA;
+  background-color: #1E2326;
+}
+
+.st-bar-start {
+  border-radius: 30px;
+  background-color: #2E383C;
+}
+.st-bar-center {
+  border-radius: 30px;
+  background-color: #1E2326;
+}
+.st-bar-end {
+  border-radius: 30px;
+  background-color: #2E383C;
+}
+
+.st-app-launcher {
+  background-color: #A7C080;
+  color: #272E33;
+  border-radius: 24px;
+  border-style: none;
+  padding: 0px 6px 0px 6px;
+}
+
+.st-system-tray {
+  border-radius: 24px;
+}
+
+.st-powermenu {
+  background-color: #A7C080;
+  border-style: none;
+  border-radius: 24px;
+  padding: 0px 7px 0px 7px;
+  color: #272E33;
+}
+
+.st-workspaces {
+  background: #2E383C;
+  border-radius: 24px;
+  border-style: none;
+}
+
+.st-window-title {
+  font-weight: bold;
+  margin-right: 6px;
+  margin-left: 10px;
+}
+
+.st-clickable {
+  background: none;
+  color: #D3C6AA;
+}

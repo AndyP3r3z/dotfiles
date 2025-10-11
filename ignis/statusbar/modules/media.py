@@ -18,7 +18,7 @@ def mpris_title(player: MprisPlayer, icon: str) -> Box:
 		]
 	)
 
-def media(icon: str = "audio-x-generic-symbolic") -> Box:
+def main(icon: str = "audio-x-generic-symbolic") -> Box:
 	return Box(
 		spacing=10,
 		child=[

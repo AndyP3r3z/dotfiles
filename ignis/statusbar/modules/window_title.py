@@ -12,12 +12,11 @@ def _get_app(cl: str, output: Literal['icon', 'name']) -> str:
 		return ""
 	return app.icon if output == 'icon' else app.name
 
-def window_title(icon: bool = True, title: bool = True) -> Box:
+def main(icon: bool = True, title: bool = True) -> Box:
 	child: list = []
 	if icon: child.append(
 		Icon(
 			image=HYPR.active_window.bind("class_name", lambda cl: _get_app(cl, 'icon')),
-			style="margin-left: 1rem;",
 			pixel_size=25,
 		)
 	)
@@ -26,7 +25,7 @@ def window_title(icon: bool = True, title: bool = True) -> Box:
 			ellipsize="end",
 			max_width_chars=40,
 			label=HYPR.active_window.bind("class_name", lambda cl: _get_app(cl, 'name')),
-			style="margin-left: 1rem; font-weight: bold;",
+			style="margin-left: 1rem;",
 		)
 	)
-	return Box(child=child)
+	return Box(child=child, css_classes=["st-window-title"])

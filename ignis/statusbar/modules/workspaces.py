@@ -33,7 +33,8 @@ def workspace_button(
 	widget: Button = Button(
 		on_click=switch_to_workspace,
 		child=Label(label=label),
-		style=f"background: none; font-size: {font_size}; border-style: none;",
+		style=f"font-size: {font_size};",
+		css_classes=["st-clickable"],
 		halign="start",
 		valign="center"
 	)
@@ -46,11 +47,12 @@ def scroll_workspaces(direction: Literal['up', 'down']) -> None:
 	HYPR.switch_to_workspace(target)
 	return
 
-def workspaces(spacing: int = 5, indicators: list[str] = ["", "", "", ""]) -> EventBox:
+def main(spacing: int = 5, indicators: list[str] = ["", "", "", ""]) -> EventBox:
 	return EventBox(
 		on_scroll_up=lambda _: scroll_workspaces("up"),
 		on_scroll_down=lambda _: scroll_workspaces("down"),
 		spacing=spacing,
+		css_classes=["st-workspaces"],
 		child=HYPR.bind_many(
 			["workspaces", "active_workspace"],
 			transform=lambda workspaces, _: [
